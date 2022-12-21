@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Welcome To Hoi An!</title>
+<!--    <link rel="stylesheet" href="styles.css" />-->
+    <meta http-equiv="Content-Type" name="viewport" content="width=device-width, initial-scale=1;text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+    <link rel="stylesheet" th:href="@{/css/recent_news_boxes.css}" />
+    <script type="text/javascript" th:src="@{/js/actions.js}"></script>
+
+    <script src="http://localhost:35729/livereload.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="recent-news-boxes.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<!DOCTYPE html>
+<!--<input name="name" type="text" maxlength="512" id="name" />-->
+<!--<button type="button" th:onclick="smt()" id ="submitButton">Submit</button>-->
+<!--<p id="content"></p>-->
+<img src = "https://www.citypassguide.com/media/slideshow/hoian-banner.jpg.1758x854_q85_crop.jpg" style="width:100%;height:auto;">
+<div class="header">
+    <a href="/" class="logo">Welcome to Hoi An</a>
+    <div class="header-right">
+        <a href="/">Home</a>
+        <a href="/hoiAn360">HoiAn360</a>
+        <a href="/destination">Destinations</a>
+        <a href="/cuisine">Cuisine</a>
+        <a href="https://www.booking.com/accommodation/city/vn/hoi-an.en-gb.html?aid=373420;label=city-hoi-an-gM_ZSK0cLKji00fkv3WNaAS388464219592%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atikwd-401166933%3Alp9040331%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9Ydj4ck6nIj5YRjPru0SpaEk;sid=5ce2aabe3cf57a8ef5a5f96b88c7a2c2;keep_landing=1&gclid=CjwKCAjw9e6SBhB2EiwA5myr9laJ0T8c9XqFioXndBHViRjNL4nRe7mO9u0ldtD4tsLej519oJ9aeRoC6g0QAvD_BwE&"  target="_blank">Accommodation</a>
+    </div>
+</div>
+<body>
+<hr style="width:100%;">
+<p class="title" align ="justify">About</p>
+<p class = "body" align ="justify">
+    Hoi An Ancient Town is an exceptionally well-preserved example of a South-East Asian trading port dating from the 15th to the 19th century.
+    Its buildings and its street plan reflect the influences, both indigenous and foreign, that have combined to produce this unique heritage site.
+    <br>
+    Read more at <a href = "https://en.wikipedia.org/wiki/H%E1%BB%99i_An" target="_blank" style="font-style: italic">here</a>
+</p>
+<hr style="width:50%;margin: auto;">
+<p class="colorp">
+<section class="recentNews">
+    <div class="container">
+        <h2 class="title" style="color:#FFF;">What's on in Hoi An</h2>
+        <br>
+        <div class="row"th:each="article : ${articles}">
+            <div class="ct-blog col-sm-6 col-md-4" >
+                <a th:href="${article.link}" style="text-decoration: none" target=”_blank”>
+                    <div class="inner" >
+                        <div class="fauxcrop">
+                            <img alt="News Entry" th:src="${article.imageLink}">
+                        </div>
+                        <div class="ct-blog-content">
+                            <div class="ct-blog-date" >
+                                <span th:text="${article.month}"></span><strong th:text="${article.day}"></strong>
+                            </div>
+                            <h3 class="ct-blog-header" th:text="${article.title}"></h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="btn-news btn-contests">
+            <a href="#" >VIEW ALL NEWS</a>
+        </div>
+    </div>
+</section>
+</p>
+<hr style="width:50%;margin: auto;">
+<p class="title" align ="justify">Hoi An Location</p>
+<div class="mapouter">
+    <div class="gmap_canvas">
+        <iframe width="500" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=H%E1%BB%99i%20An,%20Qu%E1%BA%A3ng%20Nam&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+        <a href="https://123movies-to.org"></a>
+        <br>
+        <style>.mapouter{position:relative;margin-right:auto;margin-left:auto;height:300px;width:500px;}</style>
+        <a href="https://www.embedgooglemap.net">google maps embed responsive</a>
+        <style>.gmap_canvas {overflow:hidden;background:none!important;height:300px;width:500px;}</style>
+    </div>
+</div>
+<hr style="width:100%;">
+<p class = "body" align ="center">
+    The website is only used for educational purpose, many content here may have been crawled without any permission
+    <br>
+    For any complaint, please contact us.
+</p>
+<br>
+<br>
+<br>
+<div class="footer">
+    <h4>Contact us: <a href = "mailto: hoang.lh@sis.hudst.edu.vn" style="font-style: italic">hoang.lh@sis.hudst.edu.vn</a></h4>
+</div>
+</body>
+</html>
